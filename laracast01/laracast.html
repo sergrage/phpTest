@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>laracast - 01</title>
+	<style>
+		header {
+			background:  gray;
+			padding:  2rem;
+			text-align: center;
+			color:  #ffffff;
+		}
+
+		section {
+			background-color: #e4e4ab;
+			border: 1px solid black;
+		}
+
+		h2 {
+			padding-bottom: 20px;
+		}
+
+	</style>
+</head>
+<body>
+	<header>
+		<h1>
+			<?php echo "Hello, $myName " ?>
+		</h1>
+	</header>
+	<section class="arrays">
+		<h2>Arrays</h2>
+		<ul>
+			<?php 
+				foreach($names as $name){
+					echo "<li> $name  </li>";
+				}
+			?>
+		</ul>		
+	</section>
+	<section class="ass_arrays">
+		<h2>Associative Arrays</h2>
+		<ul>
+			<?php foreach($person as $key => $value): ?>
+				<li>
+				 	<strong><?= ucwords($key); ?></strong> => <?= $value; ?> 
+				</li>		
+			<?php endforeach; ?> 
+		</ul>
+	</section>
+	<section class="var_dump">
+		<h2>Var_dump</h2>
+		<?php
+		dd($person);
+			// die();
+		?>
+	</section>	
+
+</body>
+</html>
