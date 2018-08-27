@@ -17,9 +17,7 @@
 		<thead>
 			<tr>
 				<th>id</th>
-
 				<th>description</th>
-
 				<th>completed</th>
 			</tr>
 		</thead>
@@ -27,9 +25,7 @@
 			<?php foreach($todos as $todo): ?>
 				<tr>
 					<td><?= $todo->id ?></td>
-
 					<td><?= $todo->description ?></td>
-
 					<td><?= $todo->completed ?></td>
 				</tr>
 		    <?php endforeach ?>
