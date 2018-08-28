@@ -26,4 +26,41 @@ function dd($value)
 }
 
 
+
+class Post {
+
+	public $title;
+	public $published;
+
+	public function __construct($title, $published)
+	{
+		$this->title = $title;
+		$this->published = $published;
+	}
+}
+
+$posts = [
+	new Post('One', true),
+	new Post('Two', true),
+	new Post('Three', true),
+	new Post('Four', false),
+];
+
+$posts1 = array_filter($posts, function($post){
+
+	return $post->published === true;
+
+});
+
+$posts2 = array_map(function($post){
+	return  new Post($post->title . '123', true);
+}, $posts1);
+
+
+
+
+
+
+
+
 require (__DIR__ . '/laracast.html');

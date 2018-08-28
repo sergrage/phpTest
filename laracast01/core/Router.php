@@ -2,7 +2,10 @@
 
 class Router {
 
-	protected $routes = [];
+	protected $routes = [
+		'GET' => [],
+		'POST' => []
+	];
 
 	public function load($file)
 	{
@@ -24,13 +27,14 @@ class Router {
 	public function direct($uri)
 	{
 
-		 // echo '<pre>';
-			//  var_dump($uri);
-			//  echo '</pre>';
-			//  dei();
+
 
 		if(array_key_exists($uri, $this->routes)) {
 
+				// 			 echo '<pre>';
+			 // var_dump($this->routes[$uri]);
+			 // echo '</pre>';
+			 // dei();
 
 			return $this->routes[$uri];
 		}

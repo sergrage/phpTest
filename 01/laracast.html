@@ -55,6 +55,11 @@
 			// die();
 		?>
 	</section>	
-
+	<section class="array_filter">
+		<h2>Array_filter</h2>
+		<?php foreach($posts2 as $post): ?>
+			<p> <?= $post->title;  ?> <?= $post->published;  ?> </p>
+		<?php endforeach ?>
+	</section>
 </body>
 </html>

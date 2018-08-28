@@ -31,6 +31,14 @@
 		    <?php endforeach ?>
 		</tbody>
 	</table>
+<hr>
+	<form action="names" method="get">
+		<label for="name">Name</label>	
+		<input type="text" name="name">
+
+		<button type="submit">Submit</button>
+
+	</form>
 
 
 </body>
