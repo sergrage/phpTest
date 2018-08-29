@@ -2,7 +2,7 @@
 
 class Router {
 
-	protected $routes = [
+	public $routes = [
 		'GET' => [],
 		'POST' => []
 	];
@@ -17,33 +17,43 @@ class Router {
 		
 	}
 
-	public function define($routes)
-	{
-		
-		$this->routes = $routes;
 
+// в массив routes в GET добвляется uri => controller
+	public function get($uri, $controller)
+	{
+		$this->routes['GET'][$uri] = $controller;
 	}
 
-	public function direct($uri)
+	public function post($uri, $controller)
+	{
+		$this->routes['POST'][$uri] = $controller;
+	}
+
+// $requestType это или POST или GET. 
+	public function direct($uri, $requestType)
 	{
 
+		if(array_key_exists($uri, $this->routes[$requestType])) {
 
-
-		if(array_key_exists($uri, $this->routes)) {
-
-				// 			 echo '<pre>';
-			 // var_dump($this->routes[$uri]);
-			 // echo '</pre>';
-			 // dei();
-
-			return $this->routes[$uri];
+			return $this->callAction(
+				...explode('@', $this->routes[$requestType][$uri])
+			);
 		}
 
 		throw new Exception('No Route defined for this URI');
 	}
 
+	public function callAction($controller, $action)
+	{
+		if(! method_exists($controller, $action)){
 
+			throw new Exception(
+				"{$controller} does not respond to the {$action} action"
+			);
 
+		}
 
+		return (new $controller)->$action();
+	}
 
 }

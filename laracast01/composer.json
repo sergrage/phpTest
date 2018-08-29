@@ -1,0 +1,10 @@
+{
+    "name": "shmatovskiy.sa/laracast01",
+    "require": {},
+    "autoload": {
+    	"classmap": [
+    		"./"
+
+    	]
+    }
+}

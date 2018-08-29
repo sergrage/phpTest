@@ -1,10 +1,12 @@
 <?php
 
 
-$router->define([
+$router->get('laracast01', 'PagesController@home');
+$router->get('laracast01/about', 'PagesController@about');
+$router->post('laracast01/names', 'PagesController@names');
 
-	'laracast01' => 'controllers/index.php',
-	'laracast01/about' => 'controllers/about.php',
-	'laracast01/names' => 'controllers/names.php',
 
-]);
+// echo '<pre>';
+// var_dump($router->routes);
+// echo '</pre>';
+// die();

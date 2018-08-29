@@ -57,9 +57,11 @@ $posts2 = array_map(function($post){
 }, $posts1);
 
 
+$posts3 = array_column($posts2, 'title');
 
-
-
+// echo '<pre>';
+// var_dump($posts3);
+// echo '</pre>';
 
 
 

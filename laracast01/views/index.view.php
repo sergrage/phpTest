@@ -32,9 +32,16 @@
 		</tbody>
 	</table>
 <hr>
-	<form action="names" method="get">
-		<label for="name">Name</label>	
-		<input type="text" name="name">
+	<form action="names" method="post">
+		<div>
+			<label for="description">description</label>	
+			<input type="text" name="description">
+		</div>
+		<div>
+			<label for="completed">completed</label>	
+			<input type="checkbox" name="completed">
+		</div>
+		
 
 		<button type="submit">Submit</button>
 
