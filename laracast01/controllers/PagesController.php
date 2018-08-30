@@ -1,14 +1,17 @@
 <?php 
 
-class PagesController {
+namespace Controllers;
+use Exception;
+use Core\App;
 
+class PagesController {
 
 	public function home()
 	{
 		$table = 'todos';
 		$todos = App::get('database')->selectAll($table, 'Task');
 		
-		require 'views/index.view.php';
+		return view('index', compact('table', 'todos'));
 	}
 
 	public function about()
@@ -27,7 +30,8 @@ class PagesController {
 			'completed' => $_POST['completed']
 		 ]);
 
-		require 'views/names.view.php';
+
+		redirect('laracast01/');
+		//require 'views/names.view.php';
 	}
 }
-

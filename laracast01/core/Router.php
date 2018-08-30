@@ -1,5 +1,10 @@
 <?php
 
+namespace Core;
+
+use Exception;
+use Controllers\PagesController;
+
 class Router {
 
 	public $routes = [
@@ -33,6 +38,8 @@ class Router {
 	public function direct($uri, $requestType)
 	{
 
+
+
 		if(array_key_exists($uri, $this->routes[$requestType])) {
 
 			return $this->callAction(
@@ -45,6 +52,8 @@ class Router {
 
 	public function callAction($controller, $action)
 	{
+		//die(var_dump($action));
+		$controller = "Controllers\\{$controller}";
 		if(! method_exists($controller, $action)){
 
 			throw new Exception(

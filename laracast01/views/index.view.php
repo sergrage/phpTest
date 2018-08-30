@@ -46,7 +46,10 @@
 		<button type="submit">Submit</button>
 
 	</form>
-
+	
+	<div class="">
+		<a href="about">About</a>
+	</div>
 
 </body>
 </html>
