@@ -1,0 +1,11 @@
+{
+    "name": "shmatovskiy.sa/laravel04console",
+    "require": {
+        "symfony/console": "^4.1"
+    },
+    "autoload": {
+    	"psr-4": {
+    		"SomeFolder\\": "src"
+    	}
+    }
+}
