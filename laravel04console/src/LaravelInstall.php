@@ -35,10 +35,10 @@ class LaravelInstall extends Command {
 
 		$this->assertApplicationDoesNotExist($directory, $output);
 		$this->download($zipFile = $this->makeFileName())
-			->extract($zipFile)
+			->extract($zipFile, $directory)
 			->cleanUp($zipFile);
 
-			$output->writeln('<comment>Application ready!!!</comment>')
+			$output->writeln('<comment>Application ready!!!</comment>');
 	}
 
 	private function assertApplicationDoesNotExist($directory, OutputInterface $output)
@@ -80,7 +80,7 @@ class LaravelInstall extends Command {
 
 	private function cleanUp($zipFile)
 	{
-		@cnod($zipFile, 0777);
+		@chmod($zipFile, 0777);
 		@unlink($zipFile);
 
 		return $this;
