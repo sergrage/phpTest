@@ -1,0 +1,9 @@
+{
+    "name": "shmatovskiy.sa/singletone",
+    "require": {},
+    "autoload": {
+    	"psr-4": {
+    		"SomeFolder\\" : "src"
+    	}
+    }
+}
